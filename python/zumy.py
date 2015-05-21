@@ -7,6 +7,7 @@ Created on Wed Oct 29 06:39:30 2014
 
 from mbedrpc import *
 import threading
+import time
 
 class Motor:
     def __init__(self, a1, a2):
@@ -74,5 +75,7 @@ class Zumy:
 #        return retu
         
 if __name__ == '__main__':
-    z=Zumy('/dev/ttyACM1')
-    
+    z=Zumy()
+    z.cmd(0.2,0.2)
+    time.sleep(0.3)
+    z.cmd(0,0)   
